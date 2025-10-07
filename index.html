@@ -3,40 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <title>Andrei Tamboong Portfolio</title>
 
-  <!-- ===== Header ===== -->
+  <style>
+    /* ===== Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Navbar ===== */
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #9c27b0;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: #9c27b0;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero span {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .hero button {
+      background: #fff;
+      color: #9c27b0;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background: #222;
+      color: #fff;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .about, .projects, .contact {
+      background: #fff;
+      margin: 2rem auto;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* ===== Contact Form ===== */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      background: #9c27b0;
+      color: #fff;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background: #7b1fa2;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #222;
+        width: 200px;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      .nav-links.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Navbar ===== -->
   <header>
-    <nav class="navbar">
-      <div class="logo">MyPortfolio</div>
+    <div class="navbar">
+      <h1>Andrei Tamboong</h1>
+      <span class="menu-toggle" id="menuToggle">☰</span>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="menu-toggle" id="menuToggle">&#9776;</div>
-    </nav>
+    </div>
   </header>
 
   <!-- ===== Hero Section ===== -->
-  <section id="home" class="hero">
-    <h1>Hi, I'm <span>TAMBOONG ART ANDREI D</span></h1>
-    <p>STUDENT BSIT 2-B</p>
+  <section class="hero">
+    <h2>Hi, I'm <span>Andrei Tamboong</span></h2>
+    <p>Aspiring Web Developer • Creative Designer • Tech Enthusiast</p>
     <button id="hireBtn">Hire Me</button>
   </section>
 
   <!-- ===== About Section ===== -->
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>
-      Hi! I'm Andrei Tamboong, a passionate and creative individual who loves exploring new things and learning every day. I enjoy expressing myself through art, technology, and teamwork. Whether it’s coding, designing, or sharing ideas, I always aim to give my best and make a positive impact.
-
-In my free time, I like spending time with friends, discovering music, and improving my skills. I believe that hard work, kindness, and curiosity are the keys to success.
-    </p>
+    <p>Hello! I'm Andrei Tamboong, passionate about building beautiful and functional websites. I love learning new technologies and expressing creativity through design.</p>
+    <h3>My Hobbies:</h3>
+    <ul style="list-style:none; padding:0;">
+      <li>🎮 Playing Online Games</li>
+      <li>🎨 Drawing and Design</li>
+      <li>🎧 Listening to Music</li>
+    </ul>
   </section>
 
   <!-- ===== Projects Section ===== -->
@@ -45,15 +233,15 @@ In my free time, I like spending time with friends, discovering music, and impro
     <div class="project-grid">
       <div class="project-card">
         <h3>Portfolio Website</h3>
-        <p>A personal portfolio built using HTML, CSS, and JS.</p>
+        <p>A responsive portfolio site showcasing my skills and projects.</p>
       </div>
       <div class="project-card">
-        <h3>Landing Page</h3>
-        <p>A simple landing page design for a modern product.</p>
+        <h3>Java Programs</h3>
+        <p>Basic Java projects like Stack, Linked List, and Vehicle classes.</p>
       </div>
       <div class="project-card">
-        <h3>Todo App</h3>
-        <p>An interactive to-do list app using local storage.</p>
+        <h3>Creative Design</h3>
+        <p>Posters and UI design concepts using violet-themed aesthetics.</p>
       </div>
     </div>
   </section>
@@ -62,20 +250,4 @@ In my free time, I like spending time with friends, discovering music, and impro
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="formStatus"></p>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer>
-    <p>&copy; 2025 Your Name | All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
+      <input type="text" placeholder="Your Name" required />
