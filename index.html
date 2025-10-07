@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero">
+    <h1>Hi, I'm <span>TAMBOONG ART ANDREI D</span></h1>
+    <p>STUDENT BSIT 2-B</p>
+    <button id="hireBtn">Hire Me</button>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm Andrei Tamboong, a passionate and creative individual who loves exploring new things and learning every day. I enjoy expressing myself through art, technology, and teamwork. Whether it’s coding, designing, or sharing ideas, I always aim to give my best and make a positive impact.
+
+In my free time, I like spending time with friends, discovering music, and improving my skills. I believe that hard work, kindness, and curiosity are the keys to success.
+    </p>
+  </section>
+
+  <!-- ===== Projects Section ===== -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio built using HTML, CSS, and JS.</p>
+      </div>
+      <div class="project-card">
+        <h3>Landing Page</h3>
+        <p>A simple landing page design for a modern product.</p>
+      </div>
+      <div class="project-card">
+        <h3>Todo App</h3>
+        <p>An interactive to-do list app using local storage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formStatus"></p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Your Name | All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
